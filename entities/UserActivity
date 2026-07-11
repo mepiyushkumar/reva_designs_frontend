@@ -1,0 +1,39 @@
+{
+  "name": "UserActivity",
+  "type": "object",
+  "properties": {
+    "event": {
+      "type": "string"
+    },
+    "page": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "device": {
+      "type": "string"
+    },
+    "referrer": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "event"
+  ]
+}

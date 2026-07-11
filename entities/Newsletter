@@ -1,0 +1,18 @@
+{
+  "name": "Newsletter",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "is_subscribed": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": []
+}

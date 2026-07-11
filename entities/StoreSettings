@@ -1,0 +1,64 @@
+{
+  "name": "StoreSettings",
+  "type": "object",
+  "properties": {
+    "address": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "whatsapp": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "about_hero_title": {
+      "type": "string"
+    },
+    "about_hero_subtitle": {
+      "type": "string"
+    },
+    "about_story_heading": {
+      "type": "string"
+    },
+    "about_story_text": {
+      "type": "string"
+    },
+    "about_story_image": {
+      "type": "string"
+    },
+    "about_founder1_name": {
+      "type": "string"
+    },
+    "about_founder1_role": {
+      "type": "string"
+    },
+    "about_founder1_desc": {
+      "type": "string"
+    },
+    "about_founder2_name": {
+      "type": "string"
+    },
+    "about_founder2_role": {
+      "type": "string"
+    },
+    "about_founder2_desc": {
+      "type": "string"
+    },
+    "about_mission": {
+      "type": "string"
+    },
+    "about_vision": {
+      "type": "string"
+    },
+    "about_promise": {
+      "type": "string"
+    }
+  },
+  "required": []
+}
