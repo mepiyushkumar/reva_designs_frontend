@@ -27,7 +27,7 @@ export default function AdminStoreSettings() {
 
   useEffect(() => {
     base44.entities.StoreSettings.list('-created_date', 1).then(res => {
-      setSettings(res[0] || {
+      const defaults = {
         address: 'Shop No 1, Arka, Pl.No.7, Osmania University Teachers Colony, Sainikpuri, Secunderabad 500094',
         phone: '7095131415',
         email: 'hello@revadesigns.com',
@@ -46,7 +46,8 @@ export default function AdminStoreSettings() {
         about_mission: 'To make luxury ethnic fashion accessible while preserving the ancient craft traditions of India.',
         about_vision: "To become India's most trusted destination for premium handcrafted ethnic wear.",
         about_promise: 'Every garment is a promise of quality, authenticity, and timeless elegance.',
-      });
+      };
+      setSettings({ ...defaults, ...res[0] });
       setLoading(false);
     }).catch(() => setLoading(false));
   }, []);

@@ -17,6 +17,14 @@
     "instagram": {
       "type": "string"
     },
+    "newsletter_email_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "newsletter_phone_enabled": {
+      "type": "boolean",
+      "default": true
+    },
     "about_hero_title": {
       "type": "string"
     },

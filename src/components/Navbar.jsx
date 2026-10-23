@@ -4,6 +4,7 @@ import { Search, Heart, ShoppingBag, User, Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { base44 } from '@/api/base44Client';
 import { useAuth } from '@/lib/AuthContext';
+import logoElephants from '@/assets/reva-elephants.png';
 
 const staticNavLinks = [
   { label: "Home", path: "/" },
@@ -52,7 +53,7 @@ export default function Navbar() {
           {/* Centered logo */}
           <Link to="/" className="flex flex-col items-center group">
             <img
-              src="https://media.base44.com/images/public/6a153e7f3d572d49d38078bd/1b95b2851_2-removebg-preview.png"
+              src={logoElephants}
               alt="Reva Designs elephants"
               className="h-10 sm:h-12 w-auto object-contain mb-1"
             />
@@ -142,7 +143,7 @@ export default function Navbar() {
               </button>
               <div className="flex flex-col items-center mb-8 mt-2">
                 <img
-                  src="https://media.base44.com/images/public/6a153e7f3d572d49d38078bd/1b95b2851_2-removebg-preview.png"
+                  src={logoElephants}
                   alt="Reva Designs"
                   className="h-12 w-auto object-contain mb-1"
                 />

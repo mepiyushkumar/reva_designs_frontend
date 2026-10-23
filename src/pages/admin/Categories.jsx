@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { base44 } from '@/api/base44Client';
 import { Plus, Pencil, Trash2 } from 'lucide-react';
@@ -5,6 +6,16 @@ import { toast } from 'sonner';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 const empty = { name: '', description: '', slug: '', display_order: 0, is_active: true };
+
+function Field({ label, value, onChange }) {
+  return (
+    <div>
+      <label className="text-xs text-slate-400 mb-1 block">{label}</label>
+      <input value={value || ''} onChange={e => onChange(e.target.value)}
+        className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded text-white text-sm outline-none focus:border-amber-400" />
+    </div>
+  );
+}
 
 export default function AdminCategories() {
   const [items, setItems] = useState([]);
@@ -30,13 +41,7 @@ export default function AdminCategories() {
     await base44.entities.Category.delete(id); toast.success('Deleted'); load();
   };
 
-  const Field = ({ label, name }) => (
-    <div>
-      <label className="text-xs text-slate-400 mb-1 block">{label}</label>
-      <input value={form[name] || ''} onChange={e => setForm(f => ({ ...f, [name]: e.target.value }))}
-        className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded text-white text-sm outline-none focus:border-amber-400" />
-    </div>
-  );
+  const setField = (name) => (v) => setForm(f => ({ ...f, [name]: v }));
 
   return (
     <div>
@@ -75,10 +80,10 @@ export default function AdminCategories() {
         <DialogContent className="bg-slate-900 border-slate-800 text-white max-w-md">
           <DialogHeader><DialogTitle className="text-white">{editing ? 'Edit Category' : 'Add Category'}</DialogTitle></DialogHeader>
           <div className="space-y-4">
-            <Field label="Name" name="name" />
-            <Field label="Slug" name="slug" />
-            <Field label="Description" name="description" />
-            <Field label="Display Order" name="display_order" />
+            <Field label="Name" value={form.name} onChange={setField('name')} />
+            <Field label="Slug" value={form.slug} onChange={setField('slug')} />
+            <Field label="Description" value={form.description} onChange={setField('description')} />
+            <Field label="Display Order" value={form.display_order} onChange={setField('display_order')} />
             <label className="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
               <input type="checkbox" checked={!!form.is_active} onChange={e => setForm(f => ({ ...f, is_active: e.target.checked }))} className="accent-amber-400" /> Active
             </label>

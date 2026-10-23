@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Instagram } from 'lucide-react';
 import NewsletterSection from './home/NewsletterSection';
 import { base44 } from '@/api/base44Client';
+import logoElephants from '@/assets/reva-elephants.png';
 
 const DEFAULTS = {
   address: 'Shop No 1, Arka, Pl.No.7, Osmania University Teachers Colony, Sainikpuri, Secunderabad 500094',
@@ -28,7 +29,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div>
               <div className="flex flex-col items-start mb-3">
-                <img src="https://media.base44.com/images/public/6a153e7f3d572d49d38078bd/1b95b2851_2-removebg-preview.png" alt="Reva Designs" className="h-12 w-auto object-contain brightness-[10] mb-2" />
+                <img src={logoElephants} alt="Reva Designs" className="h-8 w-auto object-contain mb-2" />
                 <h4 className="font-heading text-xl tracking-widest font-bold">REVA DESIGNS</h4>
                 <p className="text-xs opacity-70 font-body italic tracking-wider">elegance crafted in every stitch</p>
               </div>

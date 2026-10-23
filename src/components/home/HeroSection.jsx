@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { base44 } from '@/api/base44Client';
 import { ChevronDown } from 'lucide-react';
+import defaultBannerImage from '@/assets/default_banner.png';
 
 const defaultBanners = [
-  { title: "Elegance Crafted\nin Every Stitch", subtitle: "New Collection 2026", cta_text: "Shop Now", cta_link: "/shop", image: "" },
-  { title: "Bridal\nDreams", subtitle: "Timeless Wedding Collection", cta_text: "Explore", cta_link: "/collections", image: "" },
+  { title: "Elegance Crafted\nin Every Stitch", subtitle: "New Collection 2026", cta_text: "Shop Now", cta_link: "/shop", image: defaultBannerImage },
+  { title: "Bridal\nDreams", subtitle: "Timeless Wedding Collection", cta_text: "Explore", cta_link: "/collections", image: defaultBannerImage },
 ];
 
 export default function HeroSection() {
